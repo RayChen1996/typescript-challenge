@@ -7,9 +7,7 @@
  * 輸出: 'Alice: 85%'
  */
 
-export function printStudentInfo(student: {
-  student: [string, number];
-}): string {
-  // 在此實現函式
-  return `${student[0]}: ${student[1]}%`;
+export function printStudentInfo(student: [string, number]): string {
+  const [name, score] = student;
+  return `${name}: ${score}%`;
 }

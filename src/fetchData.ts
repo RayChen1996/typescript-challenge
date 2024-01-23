@@ -7,3 +7,21 @@
 
 // 請在下方寫下你的程式碼
 
+export async function fetchData(url: string): Promise<any> {
+  try {
+    // 使用 fetch 函式發送 HTTP 請求
+    const response = await fetch(url);
+
+    // 檢查是否成功取得資料
+    if (!response.ok) {
+      throw new Error(`Failed to fetch data. Status: ${response.status}`);
+    }
+
+    // 解析 JSON 格式的回應
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    // 如果發生錯誤，reject Promise
+    return Promise.reject(error);
+  }
+}

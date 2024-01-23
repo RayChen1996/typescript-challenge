@@ -5,5 +5,11 @@
  * @returns - 回傳包含所有唯一元素的新陣列
  */
 export function uniqueElements(array: number[]): number[] {
-    // 請在此處寫下你的程式碼
+  // 使用 Set 來快速找出唯一元素
+  const uniqueSet = new Set(array);
+
+  // 將 Set 轉換為陣列
+  const uniqueArray = Array.from(uniqueSet);
+
+  return uniqueArray;
 }
